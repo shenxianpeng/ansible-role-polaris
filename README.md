@@ -10,7 +10,7 @@ Role Variables
 
 Polaris CLI download base URL: 
 
-* for example, if your organization is `myorg`, `myorg` variable will be: https://myorg.polaris.synopsys.com/
+* for example, if your organization is `myorg`, `myorg` variable will be: https://myorg.polaris.synopsys.com
 
 Polaris variables in `polaris/defaults/main.yml`
 
