@@ -1,7 +1,7 @@
 Ansible Role: Polaris
 =========
 
-Install Lastest Synopsys Polaris CLI
+Install Synopsys Polaris CLI
 
 Official installation [documentation](https://sig-docs.synopsys.com/polaris/topics/t_installing-cli.html)
 
