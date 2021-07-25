@@ -1,5 +1,0 @@
----
-- hosts: localhost
-  remote_user: root
-  roles:
-    - - { role: polaris, myorg: "https://myorg.polaris.synopsys.com"}

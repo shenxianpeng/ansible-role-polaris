@@ -12,8 +12,7 @@ Polaris CLI download base URL:
 
 * for example, if your organization is `myorg`, `myorg` variable will be: https://myorg.polaris.synopsys.com
 
-Polaris variables in `polaris/defaults/main.yml`
-
+Polaris variables in `defaults/main.yml`
 
 Example Playbook
 ----------------
@@ -32,4 +31,4 @@ MIT
 Author Information
 ------------------
 
-This role was created in 2021 by Xianpeng Shen.
+This role was created in 2021 by [Xianpeng Shen](https://shenxianpeng.github.io/).
