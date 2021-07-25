@@ -1,0 +1,10 @@
+---
+# defaults file for polaris
+
+# polaris cli download url
+polaris_cli_linux64: "{{ myorg }}/api/tools/polaris_cli-linux64.zip"
+polaris_cli_win64: "{{ myorg }}/api/tools/polaris_cli-win64.zip"
+
+# polaris bin path
+polaris_path_linux64: "/opt/polaris"
+polaris_path_win64: "C:/bin/polaris"

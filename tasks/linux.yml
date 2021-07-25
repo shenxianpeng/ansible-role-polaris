@@ -1,0 +1,51 @@
+---
+# tasks file for polaris on Linux
+
+- name: Show polaris version
+  command: polaris -v
+  register: command_result
+  ignore_errors: True
+- debug: var=command_result.stdout_lines[5]
+
+- name: Remove polaris directory
+  become: true
+  file: 
+    path: "{{ polaris_path_linux64 }}"
+    state: absent
+
+- name: Create polaris directory
+  become: true
+  file:
+    path: "{{ polaris_path_linux64 }}"
+    state: directory
+
+- name: Download {{ polaris_cli_linux64 }}
+  become: true
+  command: wget {{ polaris_cli_linux64 }}
+  args:
+    chdir: "{{ polaris_path_linux64 }}"
+
+- name: Unzip polaris_cli-linux64.zip
+  become: true
+  command: unzip polaris_cli-linux64.zip
+  args:
+    chdir: "{{ polaris_path_linux64 }}"
+
+- name: Get polaris executeable path
+  shell: 'ls {{ polaris_path_linux64 }}/polaris_cli-linux64-*/bin/polaris'
+  register: ls_result
+- debug: var=ls_result.stdout_lines[0]
+    
+- name: Create polaris symlinks
+  become: true
+  file: src="{{item.src}}" dest="{{item.dest}}" state=link
+  with_items:
+    - {src: "{{ ls_result.stdout_lines[0] }}", dest: "/usr/bin/polaris"}
+  when:
+    - command_result.stdout_lines[5] not in ls_result.stdout_lines[0]
+
+- name: Show polaris version
+  command: polaris -v
+  register: command_result
+  ignore_errors: True
+- debug: var=command_result.stdout_lines[5]
