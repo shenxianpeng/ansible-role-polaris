@@ -1,7 +1,9 @@
 Ansible Role: Polaris
 =========
 
-Install Synopsys Polaris CLI
+Installs and configures Synopsys Polaris CLI
+
+![Ansible Role](https://img.shields.io/ansible/role/55765)
 
 Official installation [documentation](https://sig-docs.synopsys.com/polaris/topics/t_installing-cli.html)
 
