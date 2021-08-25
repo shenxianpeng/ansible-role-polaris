@@ -42,7 +42,8 @@
   with_items:
     - {src: "{{ ls_result.stdout_lines[0] }}", dest: "/usr/bin/polaris"}
   when:
-    - command_result.stdout_lines[5] not in ls_result.stdout_lines[0]
+    # polaris command not exist or current version is not match the latest.
+    - ("'FAILED' in command_result.stdout_lines[5]") or (command_result.stdout_lines[5] not in ls_result.stdout_lines[0])
 
 - name: Show polaris version
   command: polaris -v
